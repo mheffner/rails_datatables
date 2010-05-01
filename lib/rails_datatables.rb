@@ -11,6 +11,7 @@ module RailsDatatables
     no_records_message = opts[:no_records_message] || nil
     auto_width = opts.key?(:auto_width) ? opts[:auto_width].to_s : "true"
     row_callback = opts[:row_callback] || nil
+    length_change = opts.key?(:length_change) ? opts[:length_change].to_s : "true"
 
     append = opts[:append] || nil
 
@@ -36,7 +37,7 @@ module RailsDatatables
           "iDisplayLength": #{per_page},
           "bProcessing": true,
           "bServerSide": #{server_side},
-          "bLengthChange": false,
+          "bLengthChange": #{length_change},
           "bStateSave": #{persist_state},
           "bFilter": #{search},
           "bAutoWidth": #{auto_width},

@@ -54,6 +54,7 @@ Activate using <%= datatable() %>, passing in the columns, how to filter them (s
     :append - functions to all at the end of the dataTable() call. Useful for [Datatables plugins](http://www.datatables.net/plug-ins/api)
     :no_records_message - Message to display if no records are found, whether on load or after searching
     :auto_width - Automatically adjust the width of the columns. Defaults to true.
+    :length_change - Control whether the user can change per-page size. Defaults to true.
     :row_callback - a function to run on each row in the table. Inserted in to "'fnRowCallback': function( nRow, aData, iDisplayIndex ) {  }". See [documentation for fnRowCallback](http://www.datatables.net/usage/callbacks) for more information.
     
 #### Column Options
