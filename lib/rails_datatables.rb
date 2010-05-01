@@ -12,6 +12,7 @@ module RailsDatatables
     auto_width = opts.key?(:auto_width) ? opts[:auto_width].to_s : "true"
     row_callback = opts[:row_callback] || nil
     length_change = opts.key?(:length_change) ? opts[:length_change].to_s : "true"
+    jqueryui = opts.key?(:jqueryui) ? opts[:jqueryui].to_s : "false"
 
     append = opts[:append] || nil
 
@@ -35,6 +36,7 @@ module RailsDatatables
           },
           "sPaginationType": "full_numbers",
           "iDisplayLength": #{per_page},
+          "bJQueryUI": #{jqueryui},
           "bProcessing": true,
           "bServerSide": #{server_side},
           "bLengthChange": #{length_change},
