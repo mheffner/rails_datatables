@@ -14,6 +14,10 @@ module RailsDatatables
     length_change = opts.key?(:length_change) ? opts[:length_change].to_s : "true"
     jqueryui = opts.key?(:jqueryui) ? opts[:jqueryui].to_s : "false"
 
+    if persist_state
+      cookie_prefix = opts[:cookie_prefix] || nil
+    end
+
     append = opts[:append] || nil
 
     ajax_source = opts[:ajax_source] || nil
@@ -41,6 +45,7 @@ module RailsDatatables
           "bServerSide": #{server_side},
           "bLengthChange": #{length_change},
           "bStateSave": #{persist_state},
+          #{"'sCookiePrefix': '#{cookie_prefix}'," if cookie_prefix}
           "bFilter": #{search},
           "bAutoWidth": #{auto_width},
           #{"'aaSorting': [#{sort_by}]," if sort_by}
